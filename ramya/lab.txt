@@ -1,0 +1,87 @@
+1.
+import java.util.*;
+public class FindingFirstRepeatingNum {
+
+	    static void print(int arr[])
+	    {
+	        // Initialize index of first repeating element
+	        int min = -1;
+	 
+	        // Creates an empty hash set
+	        HashSet<Integer> set = new HashSet<>();
+	 
+	        // Traverse the input array from right to left
+	        for (int i = arr.length - 1; i >= 0; i--) {
+	            // If element is already in hash set, update min
+	            if (set.contains(arr[i]))
+	                min = i;
+	 
+	            else // Else add element to hash set
+	                set.add(arr[i]);
+	        }
+	 
+	        // Print the result
+	        if (min != -1)
+	            System.out.println(
+	                "The first repeating element is "
+	                + arr[min]);
+	        else
+	            System.out.println(
+	                "There are no repeating elements");
+	    }
+	    public static void main(String[] args)
+	       
+	    {
+	        int arr[] = { 10, 5, 3, 4, 3, 5, 6 };
+	        print(arr);
+	    }
+}
+
+
+
+2.
+import java.util.HashSet;
+public class HashSetEx {
+	public static void main(String[] args) {
+		//hash set does not maintain insertion order and removes duplicates
+		HashSet<Integer> hs=new HashSet<Integer>();
+		//adding elements to hash set
+		hs.add(1);
+		hs.add(2);
+		hs.add(3);
+		hs.add(4);
+		hs.add(5);
+		hs.add(6);
+		hs.add(6);
+		hs.add(6);
+		System.out.println(hs);//after removing duplicates
+		
+
+	}
+
+}
+
+
+
+3.
+import java.util.LinkedHashSet;
+public class LinkedHashSetEx {
+        public static void main(String[] args) {
+		
+		// linked hash set removes duplicates and maintains insertion order
+		LinkedHashSet<Integer> ls=new LinkedHashSet<Integer>();
+		
+		//adding elements to linked hash set
+		ls.add(4);
+		ls.add(3);
+		ls.add(2);
+		ls.add(4);
+		ls.add(1);
+		ls.add(3);
+		ls.add(2);
+		System.out.println(ls);//after removing duplicate values
+	}
+
+}
+
+
